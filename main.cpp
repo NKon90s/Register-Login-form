@@ -20,7 +20,7 @@ bool isValidEmail(const string& email) {
     return regex_match(email, pattern);
 }
 
-/*Checks if a passoword is at least 8 characters long, contains at lest one upper, one lower and one numeric characters*/
+/*Checks if a passoword is at least 8 characters long, contains at least one upper, one lower and one numeric characters*/
 bool isValidPassword(const string& password) {
     const regex passwordPattern("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{8,}$"); 
     return regex_match(password, passwordPattern);
