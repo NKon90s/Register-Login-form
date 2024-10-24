@@ -32,7 +32,7 @@ CREATE TABLE users (
     password_hash VARCHAR(255) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-);
+); '''
 
 ### 2. Users Session Table
 
@@ -47,7 +47,7 @@ CREATE TABLE user_sessions(
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     ip_address VARCHAR(45),
     FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
-);
+); '''
 
 
 ### 3. Password Resets Table
@@ -62,19 +62,19 @@ CREATE TABLE password_resets (
     expires_at TIMESTAMP NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
-);
+); '''
 
 ### Alternations done to User Table 
 
 Additional column added to monitor password resets:
 
 ```sql
-ALTER TABLE users ADD COLUMN password_reset_required BOOLEAN DEFAULT FALSE;
+ALTER TABLE users ADD COLUMN password_reset_required BOOLEAN DEFAULT FALSE; '''
 
 ### Alterations done to User Sessions Table
 
 ```sql
-ALTER TABLE user_sessions ADD COLUMN end_session_at TIMESTAMP DEFAULT NULL;
+ALTER TABLE user_sessions ADD COLUMN end_session_at TIMESTAMP DEFAULT NULL; '''
 
 ## Installation
 
@@ -82,7 +82,7 @@ ALTER TABLE user_sessions ADD COLUMN end_session_at TIMESTAMP DEFAULT NULL;
 
 '''bash
 git clone https://https://github.com/NKon90s/Register_Login_form
-cd Register_Login_form
+cd Register_Login_form '''
 
 -Set up the database
     - Create a new database using your preferred SQL database management system (MySQL, SQLite, PostgreSQL etc.)
