@@ -48,7 +48,7 @@ class DBConnection {
             driver = sql::mysql::get_mysql_driver_instance();
 
             // Connect to the database (replace with your MySQL credentials) 127.0.0.1 is usually the placeholder IP for local host. 3306 is usually the default port.
-            con = driver->connect("tcp://127.0.0.1:3306", "root", "Qwedsa_123");
+            con = driver->connect("tcp://127.0.0.1:3306", "yourUserName", "yourPassword");
 
             con->setSchema("user_authentication");  // Connect to the database you created
             return con;
