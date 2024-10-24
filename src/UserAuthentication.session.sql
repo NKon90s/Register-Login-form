@@ -48,7 +48,3 @@ ALTER TABLE user_sessions ADD COLUMN end_session_at TIMESTAMP DEFAULT NULL;
 
 
 
-SELECT * FROM users;
-SELECT * FROM user_sessions;
-SELECT * FROM password_resets;
-
