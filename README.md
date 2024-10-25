@@ -32,6 +32,7 @@ CREATE TABLE users (
     password_hash VARCHAR(255) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    password_reset_required BOOLEAN DEFAULT FALSE;
 );
 ```
 
@@ -48,6 +49,7 @@ CREATE TABLE user_sessions(
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     ip_address VARCHAR(45),
     FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+    end_session_at TIMESTAMP DEFAULT NULL;
 );
 ```
 
