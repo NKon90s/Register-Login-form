@@ -731,7 +731,6 @@ using namespace std;
 
                     // Log out all expired sessions
                     for (size_t i = 0; i < expiredSessions.size(); ++i) {
-                        cout << "Ending session for user: " << usernames[i] << endl;
                         logOutSession(expiredSessions[i]);
                     }
 
